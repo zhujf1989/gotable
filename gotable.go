@@ -3,9 +3,9 @@ package gotable
 import (
 	"encoding/csv"
 	"encoding/json"
-	"github.com/liushuochen/gotable/exception"
-	"github.com/liushuochen/gotable/table"
-	"github.com/liushuochen/gotable/util"
+	"github.com/zhujf1989/gotable/exception"
+	"github.com/zhujf1989/gotable/table"
+	"github.com/zhujf1989/gotable/util"
 	"io/ioutil"
 	"os"
 	"reflect"

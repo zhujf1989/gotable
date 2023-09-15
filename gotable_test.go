@@ -2,11 +2,11 @@
 package gotable_test
 
 import (
-	"github.com/liushuochen/gotable/exception"
+	"github.com/zhujf1989/gotable/exception"
 	"strings"
 	"testing"
 
-	"github.com/liushuochen/gotable"
+	"github.com/zhujf1989/gotable"
 )
 
 // Check version string whether start with "gotable".

@@ -1,6 +1,7 @@
 package util
 
 import (
+	"regexp"
 	"strings"
 	"unicode"
 )
@@ -23,6 +24,8 @@ func Capitalize(s string) string {
 
 func Length(s string) int {
 	length := 0
+	colorRegex := regexp.MustCompile(`\033\[[\d;?]+m`)
+	s = colorRegex.ReplaceAllString(s, "")
 	for _, c := range s {
 		if isChinese(c) {
 			length += 2

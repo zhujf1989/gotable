@@ -4,15 +4,16 @@ package table
 
 import (
 	"fmt"
-	"github.com/liushuochen/gotable/cell"
+	"github.com/zhujf1989/gotable/cell"
 	"sync"
 )
 
 // This method print part of table data in STDOUT. It will be called twice in *table.PrintTable method.
 // Arguments:
-//   group: 		A map that storage column as key, data as value. Data is either "-" or row, if the value of data is
-//                  "-", the printGroup method will print the border of the table.
-//   columnMaxLen:  A map that storage column as key, max length of cell of column as value.
+//
+//	group: 		A map that storage column as key, data as value. Data is either "-" or row, if the value of data is
+//	               "-", the printGroup method will print the border of the table.
+//	columnMaxLen:  A map that storage column as key, max length of cell of column as value.
 func (tb *Table) printGroup(group []map[string]cell.Cell, columnMaxLen map[string]int) string {
 	result := ""
 	for _, item := range group {

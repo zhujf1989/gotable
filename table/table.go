@@ -4,9 +4,9 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
-	"github.com/liushuochen/gotable/cell"
-	"github.com/liushuochen/gotable/exception"
-	"github.com/liushuochen/gotable/util"
+	"github.com/zhujf1989/gotable/cell"
+	"github.com/zhujf1989/gotable/exception"
+	"github.com/zhujf1989/gotable/util"
 	"os"
 	"strings"
 )
@@ -19,11 +19,11 @@ const (
 )
 
 // Table struct:
-// - Columns: Save the table columns.
-// - Row: Save the list of column and value mapping.
-// - border: A flag indicates whether to print table border. If the value is `true`, table will show its border.
-//           Default is true(By CreateTable function).
-// - tableType: Type of table.
+//   - Columns: Save the table columns.
+//   - Row: Save the list of column and value mapping.
+//   - border: A flag indicates whether to print table border. If the value is `true`, table will show its border.
+//     Default is true(By CreateTable function).
+//   - tableType: Type of table.
 type Table struct {
 	*base
 	Row []map[string]cell.Cell
@@ -59,16 +59,20 @@ func (tb *Table) AddColumn(column string) error {
 
 // AddRow method support Map and Slice argument.
 // For Map argument, you must put the data from each row into a Map and use column-data as key-value pairs. If the Map
-//   does not contain a column, the table sets it to the default value. If the Map contains a column that does not
-//   exist, the AddRow method returns an error.
+//
+//	does not contain a column, the table sets it to the default value. If the Map contains a column that does not
+//	exist, the AddRow method returns an error.
+//
 // For Slice argument, you must ensure that the slice length is equal to the column length. Method will automatically
-//   map values in Slice and columns. The default value cannot be omitted and must use gotable.Default constant.
+//
+//	map values in Slice and columns. The default value cannot be omitted and must use gotable.Default constant.
+//
 // Return error types:
 //   - *exception.UnsupportedRowTypeError: It returned when the type of the argument is not supported.
 //   - *exception.RowLengthNotEqualColumnsError: It returned if the argument is type of the Slice but the length is
-//       different from the length of column.
+//     different from the length of column.
 //   - *exception.ColumnDoNotExistError: It returned if the argument is type of the Map but contains a nonexistent
-//       column as a key.
+//     column as a key.
 func (tb *Table) AddRow(row interface{}) error {
 	switch v := row.(type) {
 	case []string:

@@ -6,7 +6,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/liushuochen/gotable"
+	"github.com/zhujf1989/gotable"
 )
 
 func main() {

@@ -2,8 +2,8 @@ package table
 
 import (
 	"fmt"
-	"github.com/liushuochen/gotable/cell"
-	"github.com/liushuochen/gotable/exception"
+	"github.com/zhujf1989/gotable/cell"
+	"github.com/zhujf1989/gotable/exception"
 )
 
 type Set struct {

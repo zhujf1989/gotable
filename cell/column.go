@@ -1,8 +1,8 @@
 package cell
 
 import (
-	"github.com/liushuochen/gotable/color"
-	"github.com/liushuochen/gotable/util"
+	"github.com/zhujf1989/gotable/color"
+	"github.com/zhujf1989/gotable/util"
 )
 
 const (
